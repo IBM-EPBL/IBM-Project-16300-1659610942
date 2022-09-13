@@ -96,7 +96,7 @@ html {
   .avatar img {
     width: 168px;
     height: 192px;
-    filter: brightness(0.5);
+   
 }
 
 footer a:not(.nav-link) {
