@@ -1,0 +1,32 @@
+.goog-logo-link{
+    display:none!important;
+    }
+  .goog-te-gadget{
+  color:transparent!important;
+  }
+  
+  .goog-te-banner-frame{
+  display:none !important;
+  
+  }
+  
+  #goog-gt-tt, .goog-te-balloon-frame{display: none !important;}
+ .goog-text-highlight { background: none !important; box-shadow: none !important;}
+ .goog-te-gadget-simple{
+    position: absolute;
+    border-radius: 50px;
+    width: 80px;
+    margin-top: 2px;
+    border: 4px  solid rgb(50, 255, 9)!important;
+    
+ }
+ .goog-te-gadget-icon{
+    border-radius: 50px;
+    
+    
+ }
+ 
+ .goog-te-menu-value{
+    display: none;
+ }
+ body{top:0!important;}
