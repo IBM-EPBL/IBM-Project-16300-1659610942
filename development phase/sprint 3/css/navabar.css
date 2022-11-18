@@ -1,0 +1,330 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+body{
+  background: blanchedalmond;
+  min-height: 100vh;
+}
+.country{
+  text-align: center;
+}
+.menu{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.menu.open{
+  width: 250px;
+}
+.menu .logo{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.menu .logo .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.menu .logo .logo_name{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.menu.open .logo .icon,
+.menu.open .logo .logo_name{
+  opacity: 1;
+}
+.menu .logo #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.menu.open .logo #btn{
+  text-align: right;
+}
+
+.menu i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.menu .navlist{
+  margin-top: 20px;
+  height: 100%;
+}
+ul{
+    padding-left: 0%;
+}
+.menu li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.menu li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  color: #FFF;
+  background: rgb(17, 14, 14);
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.menu li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.menu.open li .tooltip{
+  display: none;
+}
+.menu input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+.menu.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.menu .s{
+    padding: 2px;
+}
+.menu .bx-search{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  background:  #1d1b31;
+  color: rgb(243, 241, 241);
+}
+
+.menu.open .bx-search:hover{
+  background: #1d1b31;
+  color: rgb(223, 21, 21);
+}
+.sign{
+    background: orange;
+}
+.menu.open .sign{
+    background:none;
+}
+
+.menu .bx-search:hover{
+  background: #FFF;
+  color: #11101d;
+}
+.menu li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+
+.menu li a:hover{
+  background: #FFF;
+}
+.menu li a .links_name {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.menu.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.menu li a:hover .links_name,
+.menu li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.menu li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.menu li.profile{
+  position: fixed;
+  height: 60px;
+  width: 78px;
+  left: 0;
+  bottom: -8px;
+  padding: 10px 14px;
+  background: #1d1b31;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.menu.open li.profile{
+  width: 250px;
+}
+.menu li .profile-details{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.menu li img{
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.menu li.profile .name,
+.menu li.profile .job{
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  white-space: nowrap;
+}
+.menu li.profile .job{
+  font-size: 12px;
+}
+.menu .profile #log_out{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #1d1b31;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 0px;
+  transition: all 0.5s ease;
+}
+
+.menu.open .profile #log_out{
+  width: 50px;
+  background: none;
+}
+.home-section{
+  position: relative;
+  background: #E4E9F7;
+  min-height: 100vh;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+.container
+{
+    position: relative;
+ 
+  min-height: 90vh;
+  top: 0;
+  left:20px;
+  width:1000px;
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+.menu.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 250px);
+}
+.menu.open ~ .container{
+    left: 100px;
+    width: calc(100% - 150px);
+}
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+ 
+}
+#gt{
+  
+  float: right;
+}
+
+
+@media (max-width: 420px) {
+  .menu li .tooltip{
+    display: none;
+  }
+
+}
+/*.... wrap...*/
+
+.card-title{
+  text-align: center;
+  color: blueviolet;
+   border-bottom: 11px; 
+  border-bottom-style: inherit;
+  border-block-width: 3px; 
+  border-bottom: groove;
+
+}
+.item{
+  box-shadow: 10px 10px -1pc;
+  box-shadow: 1px 6px 10px;
+  border-radius: 10px;
+
+}
+.card{
+  padding: 15px;
+}
+.scrollable-menu {
+  height: auto;
+  max-height: 100px;
+  overflow-x: hidden;
+}
+img.picture {
+  width: 200px;
+  /* height: 300px; */
+}
+.container .h{
+  left: 10px;
+}
