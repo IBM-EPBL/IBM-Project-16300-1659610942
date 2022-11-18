@@ -1,0 +1,249 @@
+@app.route('/headlines')
+def india():
+     india="https://newsapi.org/v2/top-headlines?country=in&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+     a = requests.get(india).json()
+     india={
+        'articles' : a['articles']
+     }
+     return render_template('/healines/headlines.html',us=india)
+     #india headlines --end--
+@app.route('/headlines/us')
+def us():
+     us="https://newsapi.org/v2/top-headlines?country=us&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+     a = requests.get(us).json()
+     us={
+        'articles' : a['articles']
+     }
+     return render_template('/country/UnitedStates.html',us=us)
+     #us headlines --end--
+@app.route('/headlines/au')
+def au():
+     au="https://newsapi.org/v2/top-headlines?country=au&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+     n2=requests.get(au).json()
+     au ={
+        'articles' : n2['articles']
+     }
+
+     return render_template('/country/australia.html',au=au)
+     #au headlines --end--
+@app.route('/headlines/ae')
+def ae():
+     ae="https://newsapi.org/v2/top-headlines?country=ae&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+     n3=requests.get(ae).json()
+     ae ={
+        'articles' : n3['articles']
+     }
+     return render_template('/country/ArabEmirates.html',ae=ae)
+     #au headlines --end--
+
+@app.route('/headlines/ar')
+def ar():
+    ar="https://newsapi.org/v2/top-headlines?country=ar&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t4=requests.get(ar).json()
+    ar={
+        'articles' :t4['articles']
+    }
+    return render_template('/country/Argentina.html',ar=ar)
+     #ar headlines --end--
+
+
+
+
+
+"""@app.route('/headlines')
+def headline():
+
+   
+     
+     
+
+     cu="https://newsapi.org/v2/top-headlines?country=cu&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+     n4=requests.get(cu).json()
+     cu ={
+        'articles' : n4['articles']
+     }
+
+     return render_template("headlines.html",us=us,au=au,ae=ae,cu=cu)
+@app.route('/business')
+def business():
+    india="https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    m=requests.get(india).json()
+    b= {
+        'articles' :m['articles']
+    }
+    au="https://newsapi.org/v2/top-headlines?country=au&category=business&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    m1=requests.get(au).json()
+    b1= {
+        'articles' :m1['articles']
+    }
+     
+    return render_template("/business/business.html",m=b,au=b1)
+@app.route('/technology')
+def technology():
+    india="https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t=requests.get(india).json()
+    n= {
+        'articles' :t['articles']
+    }
+    return render_template("/technology/technology.html",b=n)
+@app.route('/politics')
+def politics():
+    india="https://newsapi.org/v2/top-headlines?country=au&category=entertainment&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t=requests.get(india).json()
+    n= {
+        'articles' :t['articles']
+    }
+    return render_template("politics.html",g=n)
+@app.route('/sports')
+def sports():
+    india="https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t=requests.get(india).json()
+    n= {
+        'articles' :t['articles']
+    }
+    aus="https://newsapi.org/v2/top-headlines?country=au&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t1=requests.get(aus).json()
+    n1= {
+        'articles' :t1['articles']
+    }
+    us="https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t2=requests.get(us).json()
+    n2= {
+        'articles' :t2['articles']
+    }
+    ae="https://newsapi.org/v2/top-headlines?country=ae&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t3=requests.get(ae).json()
+    n3= {
+        'articles' :t3['articles']
+    }
+    
+    at="https://newsapi.org/v2/top-headlines?country=at&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t5=requests.get(at).json()
+    n5= {
+        'articles' :t5['articles']
+    }
+    be="https://newsapi.org/v2/top-headlines?country=be&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t6=requests.get(be).json()
+    n6= {
+        'articles' :t6['articles']
+    }
+    bg="https://newsapi.org/v2/top-headlines?country=bg&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t7=requests.get(bg).json()
+    n7= {
+        'articles' :t7['articles']
+    }
+    br="https://newsapi.org/v2/top-headlines?country=br&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t8=requests.get(br).json()
+    n8= {
+        'articles' :t8['articles']
+    }
+    ca="https://newsapi.org/v2/top-headlines?country=ca&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t9=requests.get(ca).json()
+    n9= {
+        'articles' :t9['articles']
+    }
+    ch="https://newsapi.org/v2/top-headlines?country=ch&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t10=requests.get(ch).json()
+    n10= {
+        'articles' :t10['articles']
+    }
+    cn="https://newsapi.org/v2/top-headlines?country=cn&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t11=requests.get(cn).json()
+    n11= {
+        'articles' :t11['articles']
+    }
+    co="https://newsapi.org/v2/top-headlines?country=co&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t12=requests.get(co).json()
+    n12= {
+        'articles' :t12['articles']
+    }
+    cu="https://newsapi.org/v2/top-headlines?country=cu&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t13=requests.get(cu).json()
+    n13= {
+        'articles' :t13['articles']
+    }
+    cz="https://newsapi.org/v2/top-headlines?country=cz&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t14=requests.get(cz).json()
+    n14= {
+        'articles' :t14['articles']
+    }
+    de="https://newsapi.org/v2/top-headlines?country=de&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t15=requests.get(de).json()
+    n15= {
+        'articles' :t15['articles']
+    }
+    eg="https://newsapi.org/v2/top-headlines?country=eg&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t16=requests.get(eg).json()
+    n16= {
+        'articles' :t16['articles']
+    }
+    fr="https://newsapi.org/v2/top-headlines?country=fr&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t17=requests.get(fr).json()
+    n17= {
+        'articles' :t17['articles']
+    }
+    gb="https://newsapi.org/v2/top-headlines?country=gb&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t18=requests.get(gb).json()
+    n18= {
+        'articles' :t18['articles']
+    }
+    gr="https://newsapi.org/v2/top-headlines?country=gr&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t19=requests.get(gr).json()
+    n19= {
+        'articles' :t19['articles']
+    }
+    hk="https://newsapi.org/v2/top-headlines?country=hk&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t20=requests.get(hk).json()
+    n20= {
+        'articles' :t20['articles']
+    }
+    hu="https://newsapi.org/v2/top-headlines?country=hu&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t21=requests.get(hu).json()
+    n21= {
+        'articles' :t21['articles']
+    }
+    ie="https://newsapi.org/v2/top-headlines?country=ie&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t22=requests.get(ie).json()
+    n22= {
+        'articles' :t22['articles']
+    }
+    il="https://newsapi.org/v2/top-headlines?country=il&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t23=requests.get(il).json()
+    n23= {
+        'articles' :t23['articles']
+    }
+    it="https://newsapi.org/v2/top-headlines?country=it&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t24=requests.get(it).json()
+    n24= {
+        'articles' :t24['articles']
+    }
+    jp="https://newsapi.org/v2/top-headlines?country=jp&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t25=requests.get(jp).json()
+    n25= {
+        'articles' :t25['articles']
+    }
+    kr="https://newsapi.org/v2/top-headlines?country=kr&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t26=requests.get(kr).json()
+    n26= {
+        'articles' :t26['articles']
+    }
+    lt="https://newsapi.org/v2/top-headlines?country=lt&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t27=requests.get(lt).json()
+    n27= {
+        'articles' :t27['articles']
+    }
+    lv="https://newsapi.org/v2/top-headlines?country=lv&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t28=requests.get(lv).json()
+    n28= {
+        'articles' :t28['articles']
+    }
+    id="https://newsapi.org/v2/top-headlines?country=id&category=sports&apiKey=db4ccd67deea47e2a6ad059e3278bd7c"
+    t29=requests.get(id).json()
+    n29= {
+        'articles' :t29['articles']
+    }
+   
+    return render_template("/sports/sports.html",sp=n,au=n1,us=n2,ae=n3,
+    at=n5,be=n6,bg=n7,br=n8,ca=n9,ch=n10,cn=n11,co=n12,cu=n13,
+    cz=n14,de=n15,eg=n16,fr=n17,gb=n18,gr=n19,hk=n20,hu=n21,ie=n22,il=n23,it=n24,
+    jp=25,kr=26,lt=27,lv=28,id=29)"""
